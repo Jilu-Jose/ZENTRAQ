@@ -10,7 +10,7 @@ export default function Navbar({ user, isDark, toggleTheme, page, setPage, openA
                 <div className="nav-logo-box">
                     <svg className="nav-logo-svg" viewBox="0 0 24 24"><path d="M21 18v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1" /><polyline points="15 3 21 3 21 9" /><path d="M10 14 21 3" /><path d="M3 10h11" /><path d="M3 14h4" /></svg>
                 </div>
-                FinTrack
+                Z.E.N.T.R.A.Q
             </div>
 
             <div className="nav-center">
