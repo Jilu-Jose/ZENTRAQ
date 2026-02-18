@@ -2,6 +2,8 @@
 
 ## About
 
+Live: https://zentraq-ten.vercel.app/ 
+
 ZENTRAQ is a modern frontend fintech dashboard built using React and Firebase.  
 It allows users to securely manage their income and expenses in an intuitive and responsive interface.
 
