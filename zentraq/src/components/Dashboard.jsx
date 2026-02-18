@@ -50,8 +50,8 @@ export default function Dashboard({ txns, openEdit, del, setPage }) {
                             <div><span className="badge">{t.category}</span></div>
                             <div className="row-date">{fmtDate(t.date)}</div>
                             <div className="row-acts">
-                                <button className="act-btn edit" onClick={() => openEdit(t)}><Icon.edit />Edit</button>
-                                <button className="act-btn del" onClick={() => del(t.id)}><Icon.trash />Del</button>
+                                <button className="act-btn edit" onClick={() => openEdit(t)}><Icon.edit /></button>
+                                <button className="act-btn del" onClick={() => del(t.id)}><Icon.trash /></button>
                             </div>
                         </div>
                     ))}
