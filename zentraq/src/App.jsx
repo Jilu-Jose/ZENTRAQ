@@ -12,7 +12,7 @@ import Modal from "./components/UI/Modal";
 import Toast from "./components/UI/Toast";
 // Helper for Icon used here if needed or we can remove
 
-import "./index.css";
+import "./index.css"; 
 
 // ─── THEME ───────────────────────────────────────────────────────────────────
 const DARK = `
