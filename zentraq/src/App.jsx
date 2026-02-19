@@ -12,7 +12,7 @@ import Modal from "./components/UI/Modal";
 import Toast from "./components/UI/Toast";
 
 
-import "./index.css"; 
+import "./index.css";
 
 
 const DARK = `
@@ -52,7 +52,7 @@ export default function App() {
     const q = query(
       collection(db, "transactions"),
       where("uid", "==", user.uid)
-      
+
     );
     const unsub = onSnapshot(q, (snap) => {
       const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
@@ -74,7 +74,7 @@ export default function App() {
     signOut(auth);
   };
 
-  
+
   const save = async (formData) => {
     if (!formData.title.trim() || !formData.amount || isNaN(+formData.amount) || +formData.amount <= 0) {
       showToast("Please fill in all fields correctly", "error"); return;
@@ -135,7 +135,7 @@ export default function App() {
           {page === "analytics" && <Analytics txns={txns} />}
         </main>
 
-        <footer className="footer">FinTrack — Personal Finance Tracker &nbsp;·&nbsp; Built with React</footer>
+        <footer className="footer">Z.E.N.T.R.A.Q — 2026@zentraq.com &nbsp;·&nbsp; Created by Jilu P Jose</footer>
 
         <Modal isOpen={modal} onClose={() => setModal(false)} editItem={editItem} onSave={save} />
         <Toast toast={toast} />
