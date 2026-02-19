@@ -10,11 +10,11 @@ import Transactions from "./components/Transactions";
 import Analytics from "./components/Analytics";
 import Modal from "./components/UI/Modal";
 import Toast from "./components/UI/Toast";
-// Helper for Icon used here if needed or we can remove
+
 
 import "./index.css"; 
 
-// ─── THEME ───────────────────────────────────────────────────────────────────
+
 const DARK = `
   --bg:#0A0D14; --surface:#111827; --s2:#161E2E; --s3:#1A2335;
   --border:#1E2D42; --b2:#243248; --text:#E2E8F4; --t2:#7D90B0; --t3:#4A5E78;
@@ -38,7 +38,7 @@ export default function App() {
   const [toast, setToast] = useState(null);
   const toastRef = useRef(null);
 
-  // Auth Listener
+
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
@@ -46,13 +46,13 @@ export default function App() {
     return () => unsub();
   }, []);
 
-  // Firestore Listener
+
   useEffect(() => {
     if (!user) return;
     const q = query(
       collection(db, "transactions"),
       where("uid", "==", user.uid)
-      // orderBy("date", "desc") // requires index, can sort client side for now
+      
     );
     const unsub = onSnapshot(q, (snap) => {
       const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
@@ -74,7 +74,7 @@ export default function App() {
     signOut(auth);
   };
 
-  // CRUD Operations
+  
   const save = async (formData) => {
     if (!formData.title.trim() || !formData.amount || isNaN(+formData.amount) || +formData.amount <= 0) {
       showToast("Please fill in all fields correctly", "error"); return;

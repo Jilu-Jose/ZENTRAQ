@@ -5,7 +5,7 @@ import { CATEGORIES } from "../../lib/constants";
 export default function Modal({ isOpen, onClose, editItem, onSave }) {
     const [form, setForm] = useState({ title: "", amount: "", category: "Food", type: "expense", date: new Date().toISOString().split("T")[0] });
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
     useEffect(() => {
         if (isOpen) {
             if (editItem) {

@@ -12,7 +12,7 @@ export default function Analytics({ txns }) {
     const savingsRate = totalInc > 0 ? ((balance / totalInc) * 100).toFixed(1) : 0;
     const avgTxn = txns.length > 0 ? (txns.reduce((s, t) => s + t.amount, 0) / txns.length) : 0;
 
-    // Bar chart data — group by week
+    
     const barData = useMemo(() => {
         const weeks = {};
         txns.forEach(t => {
@@ -24,14 +24,14 @@ export default function Analytics({ txns }) {
         return Object.values(weeks).slice(-6);
     }, [txns]);
 
-    // Donut — expense by category
+    
     const donutSlices = useMemo(() => {
         const cats = {};
         txns.filter(t => t.type === "expense").forEach(t => { cats[t.category] = (cats[t.category] || 0) + t.amount; });
         return Object.entries(cats).map(([k, v]) => ({ label: k, value: v, color: CAT_COLORS[k] || "#94A3B8" })).sort((a, b) => b.value - a.value);
     }, [txns]);
 
-    // Top categories bar
+  
     const topCats = useMemo(() => {
         const cats = {};
         txns.filter(t => t.type === "expense").forEach(t => { cats[t.category] = (cats[t.category] || 0) + t.amount; });
